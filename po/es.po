@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: rodripf\n"
+"POT-Creation-Date: 2011-06-06 13:33+0000\n"
+"PO-Revision-Date: 2011-06-06 13:35+0000\n"
+"Last-Translator: Rodrigo Perez Fulloni<rodripf@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: activity/activity.info:2
+msgid "Mateton"
+msgstr "Mateton"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:26
+msgid "Tools"
+msgstr "Herramientas"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:37
+msgid "Erase"
+msgstr "Borrar"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:41
+msgid "Save"
+msgstr "Guardar"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:45
+msgid "Load"
+msgstr "Cargar"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:50
+msgid "History"
+msgstr "Historia"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:57
+msgid "Undo"
+msgstr "Deshacer"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:68
+msgid "Zoom"
+msgstr "Zoom"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:83
+msgid "Operations"
+msgstr "Operaciones"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:92
+msgid "Addition"
+msgstr "Suma"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:95
+msgid "Subtraction"
+msgstr "Resta"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:98
+msgid "Multiplication"
+msgstr "Multiplicacion"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:101
+msgid "Division"
+msgstr "Division"
