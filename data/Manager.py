@@ -4,6 +4,8 @@ __date__ ="$20/05/2011 12:12:20 PM$"
 import pickle
 from Suma import Suma
 from Resta import Resta
+from Multiplicacion import Multiplicacion
+from Division import Division
 
 class Manager:
     def __init__(self, funcDigit):
@@ -40,6 +42,8 @@ class Manager:
             operacion = Resta(self.funcionesDigitos)
         elif eo.tipo == 2:
             operacion = Multiplicacion(self.funcionesDigitos)
+        elif eo.tipo == 3:
+            operacion = Division(self.funcionesDigitos)
 
         historia.actual = 0
         for i in xrange(len(historia.suc)):

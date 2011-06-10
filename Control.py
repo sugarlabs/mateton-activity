@@ -34,6 +34,7 @@ class Control:
         self.guardado = False
         self.hist = Historia()
         self.cuenta = None
+        self.zoom =2
         
         #Contiene todo
         self.todo = gtk.HBox(False, 0)
@@ -81,14 +82,14 @@ class Control:
         #<uncomment for PC>
 
 
-#        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-#        self.window.set_title("Mateton")
-#        self.window.connect("delete_event", self.deleteEvent)
-#        self.window.set_border_width(5)
-#        self.window.set_default_size(800, 600)
-#
-#        self.window.add(self.todo)
-#        self.window.show()
+        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.set_title("Mateton")
+        self.window.connect("delete_event", self.deleteEvent)
+        self.window.set_border_width(5)
+        self.window.set_default_size(800, 600)
+
+        self.window.add(self.todo)
+        self.window.show()
 
 
 
@@ -121,36 +122,36 @@ class Control:
                 self.cuenta = Division((self.__digClic,))
 
         if tipo == 0 or tipo == 1:
-            self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.cuenta.actualizarLineHor))
-            self.cuenta.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.cuenta.actualizarLineHor))
+            self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
         elif tipo == 2:
-            self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
-            self.cuenta.suma.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.suma.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.suma.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.suma.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.suma.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.suma.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
-            self.cuenta.suma.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.suma.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.suma.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.suma.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
         elif tipo == 3:
-            self.cuenta.restos.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.restos.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.restos.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.restos.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.restos.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.restos.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
-            self.cuenta.cociente.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.cociente.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.cociente.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
 
-            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
-            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar))
-            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
+            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
         self.pizarron.add_with_viewport(self.cuenta.agregar)
         print "paso"
@@ -208,9 +209,11 @@ class Control:
         if valor != self.hist.getPosicion():
             self.hist.setPosicion(int(round(valor)), self.cuenta)
 
-    def __moverZoom(self, obj): #callback el slider
-        valor = obj.get_value()
-        self.cuenta.setZoom(valor)
+    def __moverZoom(self, obj=None, data=0): #callback el slider
+        if obj!=0 and obj!=1 and obj!=2 and obj!=None:
+            self.zoom = obj.get_value()
+
+        self.cuenta.setZoom(self.zoom)
 
     def mantener(self, obj = None, data =None, nombre = ""): #callback para boton guardar
         if (nombre != ""):

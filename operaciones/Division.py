@@ -23,7 +23,7 @@ class Division(Operacion):
         self.principal.pack_end(self.der, False, False)
 
         self.linea2 = self.getLineaVer(50)
-        self.principal.pack_end(self.linea2, True, True)
+        self.principal.pack_end(self.linea2, False, False)
 
         self.izq = gtk.VBox(False, 10)
         self.izq.show()
