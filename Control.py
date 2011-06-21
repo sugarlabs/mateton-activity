@@ -82,14 +82,14 @@ class Control:
         #<uncomment for PC>
 
 
-        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-        self.window.set_title("Mateton")
-        self.window.connect("delete_event", self.deleteEvent)
-        self.window.set_border_width(5)
-        self.window.set_default_size(800, 600)
-
-        self.window.add(self.todo)
-        self.window.show()
+#        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+#        self.window.set_title("Mateton")
+#        self.window.connect("delete_event", self.deleteEvent)
+#        self.window.set_border_width(5)
+#        self.window.set_default_size(800, 600)
+#
+#        self.window.add(self.todo)
+#        self.window.show()
 
 
 

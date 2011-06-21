@@ -68,9 +68,9 @@ class Mateton(activity.Activity):
         print "Hola"
         about = gtk.AboutDialog()
         about.set_program_name("Mateton")
-        about.set_version("2.0")
+        about.set_version("3")
         about.set_copyright(_("Rodrigo Perez Fulloni - Released under the GPL v.3.0"))
-        about.set_comments(_("Departamento de Inenieria - Fundacion Teleton\nMontevideo Uruguay"))
+        about.set_comments(_("Departamento de Ingenieria - Fundacion Teleton\nMontevideo Uruguay"))
         about.set_website("http://www.teleton.org.uy")
         about.set_logo(gtk.gdk.pixbuf_new_from_file("activity/teleton.gif"))
         about.run()
