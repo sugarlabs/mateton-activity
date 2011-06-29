@@ -57,10 +57,11 @@ class Operacion:
         return im
 
     def actualizarLineHor(self, data1):
-        self.igual.remove(self.linea)
-        rect = self.igual.get_allocation()
-        self.linea = self.getLineaHor(rect.width)
-        self.igual.add(self.linea)
+#        self.igual.remove(self.linea)
+#        rect = self.igual.get_allocation()
+#        self.linea = self.getLineaHor(rect.width)
+#        self.igual.add(self.linea)
+        pass
 
     def getLineaVer(self, alto):
         im = gtk.Image()

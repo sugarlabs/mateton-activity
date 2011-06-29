@@ -134,7 +134,7 @@ class Control:
 
             self.cuenta.suma.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.suma.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.suma.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.suma.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom, self.__actualizarFactores))
 
             self.cuenta.suma.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.suma.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
@@ -210,8 +210,11 @@ class Control:
             self.hist.setPosicion(int(round(valor)), self.cuenta)
 
     def __moverZoom(self, obj=None, data=0): #callback el slider
-        if obj!=0 and obj!=1 and obj!=2 and obj!=None:
-            self.zoom = obj.get_value()
+        if obj!=None:
+            try:
+                self.zoom = obj.get_value()
+            except:
+                pass
 
         self.cuenta.setZoom(self.zoom)
 
@@ -253,6 +256,12 @@ class Control:
         if self.seleccionado != None:
             self.seleccionado.seleccionar(False)
             self.seleccionado = None
+
+    def __actualizarFactores(self):
+        """Solucion chancha. Solo para multiplicaciones. Agrega el nuevo factor de la
+        suma a la lista de factores"""
+        self.cuenta.factores.factores.append(self.cuenta.suma.factores.factores[len(self.cuenta.suma.factores.factores)-1])
+
 
 
 

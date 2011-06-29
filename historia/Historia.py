@@ -30,20 +30,33 @@ class Historia:
 
             nuevo = self.suc[lugar]
             tipo = nuevo.getTipo()
-            if tipo == 0:
+            if tipo == 0: #cambio valor
                 valores = nuevo.getValor()
                 obj = nuevo.getObjeto()
                 operacion.setValor(obj[0], obj[1], valores[1])
             elif tipo == 1:
-                operacion.factores.agregarUno()
+                if operacion.tipo < 2:
+                    operacion.factores.agregarUno()
+                else:
+                    operacion.suma.factores.agregarUno()
+                    operacion.factores.factores.append(operacion.suma.factores.factores[len(operacion.suma.factores.factores)-1])
             elif tipo==2:
-                operacion.factores.quitarUno()
+                if operacion.tipo < 2 or operacion.tipo==3:
+                    operacion.factores.quitarUno()
+                else:
+                    operacion.suma.factores.quitarUno()
             elif tipo == 3:
                 obj = nuevo.getObjeto()
-                operacion.factores.factores[obj].digitos.agregarUno()
+                if obj >= 0:
+                    operacion.factores.factores[obj].digitos.agregarUno()
+                else:
+                    operacion.resultado.digitos.agregarUno()
             elif tipo == 4:
                 obj = nuevo.getObjeto()
-                operacion.factores.factores[obj].digitos.quitarUno()
+                if obj >= 0:
+                    operacion.factores.factores[obj].digitos.quitarUno()
+                else:
+                     operacion.resultado.digitos.quitarUno()
 
         elif self.actual > lugar: #me muevo hacia la izquierda
             if self.actual - lugar > 1:
@@ -56,14 +69,26 @@ class Historia:
                 obj = actual.getObjeto()
                 operacion.setValor(obj[0], obj[1], valores[0])
             elif tipo == 1:
-                operacion.factores.quitarUno()
+                if operacion.tipo < 2 or operacion.tipo==3:
+                    operacion.factores.quitarUno()
+                else:
+                    operacion.suma.factores.quitarUno()
             elif tipo == 2:
-                operacion.factores.agregarUno()
+                if operacion.tipo < 2 or operacion.tipo==3:
+                    operacion.factores.agregarUno()
+                else:
+                    operacion.suma.factores.quitarUno()
             elif tipo == 3:
                 obj = actual.getObjeto()
-                operacion.factores.factores[obj].digitos.quitarUno()
+                if obj >= 0:
+                    operacion.factores.factores[obj].digitos.quitarUno()
+                else:
+                     operacion.resultado.digitos.quitarUno()
             elif tipo == 4:
                 obj = actual.getObjeto()
-                operacion.factores.factores[obj].digitos.agregarUno()
+                if obj >= 0:
+                    operacion.factores.factores[obj].digitos.agregarUno()
+                else:
+                     operacion.resultado.digitos.agregarUno()
 
         self.actual = lugar

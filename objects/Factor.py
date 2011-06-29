@@ -12,6 +12,9 @@ class Factor:
         self.idFactor = idFactor
         self.defaultListeners = functions
 
+        self.MasListeners =()
+        self.MenosListeners = ()
+
         self.botonMas = gtk.Button("<<")
         self.botonMas.show()
         self.botonMas.connect("clicked", self.clicMas)

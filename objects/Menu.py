@@ -78,7 +78,7 @@ class Menu:
         
 
         #Operaciones
-        oper = gtk.Frame(_("Operations"))
+        oper = gtk.Frame(_("Start new operation"))
         oper.show()
         cont = gtk.VBox(False, 5)
         cont.show()

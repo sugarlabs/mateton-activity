@@ -14,10 +14,12 @@ class Factores():
         self.agregar = gtk.HBox()
         self.agregar.show()
 
+
         self.principal = gtk.VBox(False, 10)
         self.principal.show()
         self.agregar.pack_end(self.principal)
 
+        self.correrIDs = correrIDs
         self.digitos = digitos
         self.unoMenos = unoMenos #si voy restando de a uno la cantidad de digitos a medida que agrego
         self.count = 0 + correrIDs #cuenta la cantidad de factores que tengo
@@ -56,17 +58,20 @@ class Factores():
 
         if(self.hided == 0):
             este = Factor(self.digitos, functions, self.count)
+            if len(self.factores) != 0:
+                este.MasListeners = self.factores[0].MasListeners
+                este.MenosListeners = self.factores[0].MenosListeners
             self.count += 1
             self.factores.append(este)
             self.principal.pack_start(este.agregar, False, False)
         else:
-            self.factores[self.count - self.hided].agregar.show()
+            self.factores[self.count - self.hided - self.correrIDs].agregar.show()
             self.hided -= 1
         
 
     def quitarUno(self):
         if self.hided < self.count:
-            self.factores[self.count - self.hided - 1].agregar.hide()
+            self.factores[self.count - self.hided - 1 - self.correrIDs].agregar.hide()
             self.hided += 1
         
 
