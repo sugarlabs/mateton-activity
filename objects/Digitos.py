@@ -7,11 +7,12 @@ import gtk
 from Digito import Digito
 
 class Digitos:
-    def __init__(self, cant, functions, idFactor):
+    def __init__(self, cant, functions, idFactor, inverso=False):
         self.digitos = []
         self.agregar = gtk.HBox(False)
         self.agregar.show()
         self.defaultListeners = functions
+        self.inverso = inverso
         
         self.idFactor = idFactor
         self.count = 0 #cuenta la cantidad de digitos que tengo
@@ -24,12 +25,21 @@ class Digitos:
     def agregarUno(self, functions = None):
         if functions == None:
             functions = self.defaultListeners
+
         if(self.hided == 0):
             este = Digito(self.idFactor, self.count)
             self.count += 1
             este.setListener(functions)
             self.digitos.append(este)
-            self.agregar.pack_end(este.agregar, False, False, 10)
+            
+            if self.inverso:
+                print self.inverso
+                self.agregar.pack_start(este.agregar, False, False, 10)
+            else:
+                self.agregar.pack_end(este.agregar, False, False, 10)
+                    
+
+                
         else:
             self.digitos[self.count - self.hided].agregar.show()
             self.hided -= 1

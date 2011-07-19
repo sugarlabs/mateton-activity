@@ -35,13 +35,13 @@ class Historia:
                 obj = nuevo.getObjeto()
                 operacion.setValor(obj[0], obj[1], valores[1])
             elif tipo == 1:
-                if operacion.tipo < 2:
+                if operacion.tipo != 2:
                     operacion.factores.agregarUno()
                 else:
                     operacion.suma.factores.agregarUno()
                     operacion.factores.factores.append(operacion.suma.factores.factores[len(operacion.suma.factores.factores)-1])
             elif tipo==2:
-                if operacion.tipo < 2 or operacion.tipo==3:
+                if operacion.tipo != 2:
                     operacion.factores.quitarUno()
                 else:
                     operacion.suma.factores.quitarUno()
@@ -69,12 +69,12 @@ class Historia:
                 obj = actual.getObjeto()
                 operacion.setValor(obj[0], obj[1], valores[0])
             elif tipo == 1:
-                if operacion.tipo < 2 or operacion.tipo==3:
+                if operacion.tipo != 2:
                     operacion.factores.quitarUno()
                 else:
                     operacion.suma.factores.quitarUno()
             elif tipo == 2:
-                if operacion.tipo < 2 or operacion.tipo==3:
+                if operacion.tipo != 2:
                     operacion.factores.agregarUno()
                 else:
                     operacion.suma.factores.quitarUno()

@@ -11,49 +11,48 @@ from Factor import Factor
 
 class Division(Operacion):
     def __init__(self, functions, digitos = 2):
-        self.agregar = gtk.HBox()
+        self.agregar = gtk.VBox()
         self.agregar.show()
+        self.principal = self.agregar
 
-        self.principal = gtk.HBox()
-        self.principal.show()
-        self.agregar.add(self.principal)
+        arriba = gtk.HBox()
+        arriba.show()
+        self.agregar.pack_start(arriba, False, False)       
 
-        self.der=gtk.VBox(False, 10)
-        self.der.show()
-        self.principal.pack_end(self.der, False, False)
+        abajo = gtk.HBox()
+        abajo.show()
+        self.agregar.pack_start(abajo, False, False)
 
-        self.linea2 = self.getLineaVer(50)
-        self.principal.pack_end(self.linea2, False, False)
-
-        self.izq = gtk.VBox(False, 10)
-        self.izq.show()
-        self.principal.pack_end(self.izq, False, False)
-
-        self.dividendo = Factor(digitos, functions, digitos)
-        self.divisor = Factor(digitos, functions, digitos+1)
-
-        self.cociente = Factor(digitos, functions, -1)
-        self.restos = Factores(digitos, digitos, functions, True)
-
-        self.izq.pack_start(self.dividendo.agregar, False, False)
-        self.izq.pack_start(self.restos.agregar, False, False)
-        self.der.pack_start(self.divisor.agregar, False, False)
+        self.dividendo = Factor(digitos, functions, 0)
+        self.divisor = Factor(digitos, functions, 1)
+        self.linea2 = self.getLineaVer(100)
 
         self.igual = gtk.HBox()
         self.igual.show()
+        self.linea = self.getLineaHor(250)
+        self.igual.pack_end(self.linea)
 
-        self.linea = self.getLineaHor(200)
-        self.igual.pack_end(self.linea, False, False)
+        arriba.pack_end(self.dividendo.agregar, False, False)
+        arriba.pack_end(self.linea2, False, False)
+        arriba.pack_end(self.divisor.agregar, False, False)
 
-        self.der.pack_start(self.igual, False, False)
+        self.cociente = Factor(digitos, functions, -1, inverso=True)
+        self.restos = Factores(digitos, digitos, functions, True,  correrIDs = 2, inverso=True)
 
-        self.der.pack_start(self.cociente.agregar, False, False)
+        der = gtk.VBox()
+        der.show()
+        der.pack_start(self.igual, False, False)
+        der.pack_start(self.cociente.agregar, False, False)
+
+        abajo.pack_end(der, False, False)
+        abajo.pack_end(self.restos.agregar, False, False)
+        
+
+        
 
         self.factores = self.restos
-        self.factores.factores.append(self.dividendo)
-        self.factores.factores.append(self.divisor)
+        self.factores.factores.insert(0, self.divisor)
+        self.factores.factores.insert(0, self.dividendo)
 
         self.resultado = self.cociente
         self.tipo = 3
-
-        self.setZoom(1)

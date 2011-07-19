@@ -1,3 +1,22 @@
+#      MATETON - Un pizarron para los ninos
+#  Copyright (C) 2011 - Rodrigo Perez Fulloni
+#Departamento de Ingenieria, Fundacion Teleton
+#             Montevideo, Uruguay
+#
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 from Control import Control
 from sugar.activity import activity
 import simplejson
@@ -7,8 +26,6 @@ pygtk.require('2.0')
 import gtk
 
 from time import gmtime, strftime
-from sugar.graphics.toolbutton import ToolButton
-from gettext import gettext as _
 
 __author__ = "rodripf"
 __date__ = "$12/05/2011 08:21:57 AM$"
@@ -22,18 +39,13 @@ class Mateton(activity.Activity):
         activity_toolbar.share.props.visible = False #Todavia no hay share
         activity_toolbar.show()
 
-        self.acerca_bt = ToolButton('acerca')
-        self.acerca_bt.set_tooltip(_('Acerca de...'))
-        activity_toolbar.insert(self.acerca_bt, -1)
-	self.acerca_bt.connect('clicked', self.acerca)
-	self.acerca_bt.show()
-
         self.set_toolbox(toolbox)
         toolbox.show()
 
         self.activity = Control()
 
         self.set_canvas(self.activity.todo)
+        self.nomArch =""
 
 
     def read_file(self, file_path):
@@ -44,16 +56,19 @@ class Mateton(activity.Activity):
         text = fd.read()
         data = simplejson.loads(text)
         fd.close()
-
-        self.activity.cargar(nombre = data['name'])
-        pass
+        self.nomArch = data['name']
+        self.activity.cargar(nombre = self.nomArch)
+        print "cargo"
 
     def write_file(self, file_path):
         if not self.metadata['mime_type']:
             self.metadata['mime_type'] = 'text/plain'
 
         data = {}
-        data['name'] = strftime("%d-%b-%Y-%H:%M:%S", gmtime())
+        if self.nomArch =="":
+            data['name'] = strftime("%d-%b-%Y-%H:%M:%S", gmtime())
+        else:
+            data['name'] = self.nomArch
 
         fd = open(file_path, 'w')
         text = simplejson.dumps(data)
@@ -61,20 +76,4 @@ class Mateton(activity.Activity):
         fd.close()
 
         self.activity.mantener(nombre = data['name'])
-        pass
-
-
-    def acerca(self, data):
-        print "Hola"
-        about = gtk.AboutDialog()
-        about.set_program_name("Mateton")
-        about.set_version("3")
-        about.set_copyright(_("Rodrigo Perez Fulloni - Released under the GPL v.3.0"))
-        about.set_comments(_("Departamento de Ingenieria - Fundacion Teleton\nMontevideo Uruguay"))
-        about.set_website("http://www.teleton.org.uy")
-        about.set_logo(gtk.gdk.pixbuf_new_from_file("activity/teleton.gif"))
-        about.run()
-        about.destroy()
-        pass
-
-
+        print "salvo"

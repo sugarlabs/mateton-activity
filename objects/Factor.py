@@ -8,7 +8,7 @@ import gtk
 from Digitos import Digitos
 
 class Factor:
-    def __init__(self, cant, functions, idFactor):
+    def __init__(self, cant, functions, idFactor, inverso=False):
         self.idFactor = idFactor
         self.defaultListeners = functions
 
@@ -29,7 +29,7 @@ class Factor:
         self.agregar.pack_start(self.botonMas, False, False)
         self.agregar.pack_start(self.botonMenos, False, False)
 
-        self.digitos = Digitos(cant, self.defaultListeners, self.idFactor)
+        self.digitos = Digitos(cant, self.defaultListeners, self.idFactor, inverso)
         self.agregar.pack_end(self.digitos.agregar)
 
         self.setListener(functions)       

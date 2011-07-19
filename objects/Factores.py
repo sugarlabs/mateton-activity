@@ -8,11 +8,12 @@ import gtk
 from Factor import Factor
 
 class Factores():
-    def __init__(self, factores, digitos, functions, botonMas = False, unoMenos = False, correrIDs = 0):
+    def __init__(self, factores, digitos, functions, botonMas = False, unoMenos = False, correrIDs = 0, inverso=False):
         self.defaultListeners = functions
         self.factores = []
         self.agregar = gtk.HBox()
         self.agregar.show()
+        self.inverso = inverso
 
 
         self.principal = gtk.VBox(False, 10)
@@ -57,7 +58,7 @@ class Factores():
             self.digitos -= 1
 
         if(self.hided == 0):
-            este = Factor(self.digitos, functions, self.count)
+            este = Factor(self.digitos, functions, self.count, self.inverso)
             if len(self.factores) != 0:
                 este.MasListeners = self.factores[0].MasListeners
                 este.MenosListeners = self.factores[0].MenosListeners

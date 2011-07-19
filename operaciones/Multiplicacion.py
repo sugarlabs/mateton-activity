@@ -39,7 +39,6 @@ class Multiplicacion(Operacion):
         self.principal.pack_start(self.suma.agregar, False, False)
 
         self.factores.factores.extend(self.suma.factores.factores)
-        #TODO: agregar factores nuevos de la suma a factores cuando agrego factores
 
         self.resultado = self.suma.resultado
         

@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-# example helloworld2.py
-
 import pygtk
 pygtk.require('2.0')
 import gtk
@@ -34,7 +32,7 @@ class Control:
         self.guardado = False
         self.hist = Historia()
         self.cuenta = None
-        self.zoom =2
+        self.zoom = 2
         
         #Contiene todo
         self.todo = gtk.HBox(False, 0)
@@ -94,6 +92,7 @@ class Control:
 
 
         #</uncomment for PC>
+        
 
     def cargarCuenta(self, tipo, operacion=None):
         if self.seleccionado != None:
@@ -109,16 +108,16 @@ class Control:
             self.hist = Historia()
             self.__actualizarAdj()
 
-        if not operacion== None:
+        if not operacion == None:
             self.cuenta = operacion
         else:
             if tipo == 0:
                 self.cuenta = Suma((self.__digClic,))
-            elif tipo==1:
+            elif tipo == 1:
                 self.cuenta = Resta((self.__digClic,))
             elif tipo == 2:
                 self.cuenta = Multiplicacion((self.__digClic,))
-            elif tipo==3:
+            elif tipo == 3:
                 self.cuenta = Division((self.__digClic,))
 
         if tipo == 0 or tipo == 1:
@@ -145,16 +144,9 @@ class Control:
             self.cuenta.restos.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
             self.cuenta.cociente.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.cociente.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
-
-            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.divisor.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-
-            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.dividendo.setListenerClicMas((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            self.cuenta.cociente.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
 
         self.pizarron.add_with_viewport(self.cuenta.agregar)
-        print "paso"
 
 
     def __numClic(self, valor): #callback para clic en boton numero
@@ -169,7 +161,7 @@ class Control:
             self.seleccionado.seleccionar(True)
 
     def __agregarAHistCV(self, valor): #callback para clic en boton numero
-         if self.seleccionado and self.seleccionado.getValor() != valor:
+        if self.seleccionado and self.seleccionado.getValor() != valor:
             suc = Suceso(0)
             suc.setObjeto(self.seleccionado.idFactor, self.seleccionado.idDigito)
             suc.setValor((self.seleccionado.getValor(), valor))
@@ -194,9 +186,9 @@ class Control:
         self.hist.agregar(suc)
 
     def __actualizarAdj(self, data1=0, data2=0):
-        self.menu.cargarAdj(self.hist.getPosicion()+1, 0, len(self.hist.suc)-1)
+        self.menu.cargarAdj(self.hist.getPosicion() + 1, 0, len(self.hist.suc)-1)
         self.menu.setHistListeners((self.__moverHistoria,))
-       
+
 
     def __deshacer(self, boton, data): #callback para el boton deshacer
         self.hist.setPosicion(self.hist.getPosicion()-1, self.cuenta)
@@ -210,7 +202,7 @@ class Control:
             self.hist.setPosicion(int(round(valor)), self.cuenta)
 
     def __moverZoom(self, obj=None, data=0): #callback el slider
-        if obj!=None:
+        if obj != None:
             try:
                 self.zoom = obj.get_value()
             except:
@@ -218,7 +210,7 @@ class Control:
 
         self.cuenta.setZoom(self.zoom)
 
-    def mantener(self, obj = None, data =None, nombre = ""): #callback para boton guardar
+    def mantener(self, obj=None, data=None, nombre=""):
         if (nombre != ""):
             self.mngr.setArchivo(nombre)
         else:
@@ -230,14 +222,14 @@ class Control:
         self.mngr.setEstadoOperacion(estado)
         self.mngr.guardar()
 
-    def cargar(self, obj = None, data = None, nombre = ""): #callback para boton cargar
+    def cargar(self, obj=None, data=None, nombre=""):
         if (nombre != ""):
             self.mngr.setArchivo(nombre)
         else:
             self.mngr.setArchivo("prueba1")
         (hist, op) = self.mngr.abrir()
         self.cargarCuenta(op.tipo, op)
-        self.hist = hist        
+        self.hist = hist
         self.__actualizarAdj()
 
     def __suma(self, obj, data):
@@ -259,14 +251,12 @@ class Control:
 
     def __actualizarFactores(self):
         """Solucion chancha. Solo para multiplicaciones. Agrega el nuevo factor de la
-        suma a la lista de factores"""
+            suma a la lista de factores"""
         self.cuenta.factores.factores.append(self.cuenta.suma.factores.factores[len(self.cuenta.suma.factores.factores)-1])
-
-
-
 
 def main():
     gtk.main()
+
 
 if __name__ == "__main__":
     hello = Control()
