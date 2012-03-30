@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"PO-Revision-Date: 2011-08-29 07:09+0200\n"
+"Last-Translator: <saulleoart@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#: activity/activity.info:2
+#, fuzzy
+msgid "Mateton"
+msgstr "Mateton"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+msgid "Tools"
+msgstr "Eyextalábchik"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+msgid "Erase"
+msgstr "Pakuw"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
+msgid "Save"
+msgstr "Dhaya'"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
+msgid "Load"
+msgstr "Ka k'adhba'"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+msgid "History"
+msgstr "Wat'elom t'ilab"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+msgid "Undo"
+msgstr "Ka tixk'a'"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+msgid "Zoom"
+msgstr "Puwedha'"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+msgid "Start new operation"
+msgstr ""
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+msgid "Addition"
+msgstr "Punk'udh ajimtaláb"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+msgid "Subtraction"
+msgstr "Tixk'adh ajimtaláb"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+msgid "Multiplication"
+msgstr "Dho'edhom ajimtaláb"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+msgid "Division"
+msgstr "Buk'nadh ajimtaláb"
+
+#~ msgid "Acerca de..."
+#~ msgstr "Etílakej.."
+
+#~ msgid "Rodrigo Perez Fulloni - Released under the GPL v.3.0"
+#~ msgstr "Rodrigo perez Fulloni - tejwamédhach k'al an jolataláb GPL v.3.0"
+
+#~ msgid ""
+#~ "Departamento de Inenieria - Fundacion Teleton\n"
+#~ "Montevideo Uruguay"
+#~ msgstr "atáj jolataláb ti inenieria- tin tujtal an teleton/nmontevideo uruguay"
+
+#~ msgid "Operations"
+#~ msgstr "Tájnél k'al an ajixtaláb"

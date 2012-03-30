@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"PO-Revision-Date: 2011-12-08 16:03+0200\n"
+"Last-Translator: lite <litekok@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: activity/activity.info:2
+msgid "Mateton"
+msgstr "数学黑板"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+msgid "Tools"
+msgstr "工具"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+msgid "Erase"
+msgstr "擦除"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
+msgid "Save"
+msgstr "保存"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
+msgid "Load"
+msgstr "载入"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+msgid "History"
+msgstr "历史"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+msgid "Undo"
+msgstr "撤消"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+msgid "Zoom"
+msgstr "放大镜"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+msgid "Start new operation"
+msgstr "开始新的操作"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+msgid "Addition"
+msgstr "加法"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+msgid "Subtraction"
+msgstr "减法"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+msgid "Multiplication"
+msgstr "乘法"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+msgid "Division"
+msgstr "除法"

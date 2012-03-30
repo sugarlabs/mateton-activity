@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"PO-Revision-Date: 2012-03-09 05:40+0200\n"
+"Last-Translator: Meechai <malaku38@hotmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: activity/activity.info:2
+msgid "Mateton"
+msgstr "Mateton"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+msgid "Tools"
+msgstr "เครื่องมือ"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+msgid "Erase"
+msgstr "ลบ"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
+msgid "Save"
+msgstr "บันทึก"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
+msgid "Load"
+msgstr "โหลด"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+msgid "History"
+msgstr "ประวัติการใช้"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+msgid "Undo"
+msgstr "ทำกลับ"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+msgid "Zoom"
+msgstr "ย่อ/ขยาย"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+msgid "Start new operation"
+msgstr "เริ่มการคำนวณใหม่"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+msgid "Addition"
+msgstr "การบวก"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+msgid "Subtraction"
+msgstr "การลบ"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+msgid "Multiplication"
+msgstr "การคูณ"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+msgid "Division"
+msgstr "การหาร"
+
+#~ msgid "Operations"
+#~ msgstr "ปฏิบัติการต่าง ๆ"

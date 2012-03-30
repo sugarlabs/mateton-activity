@@ -2,69 +2,86 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
-"Report-Msgid-Bugs-To: rodripf\n"
-"POT-Creation-Date: 2011-06-06 13:33+0000\n"
-"PO-Revision-Date: 2011-06-06 13:35+0000\n"
-"Last-Translator: Rodrigo Perez Fulloni<rodripf@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-27 07:24-0400\n"
+"PO-Revision-Date: 2011-09-28 09:52+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
+# proviene de Matemáticas y Teletón = MateTón
 #: activity/activity.info:2
 msgid "Mateton"
 msgstr "Mateton"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:26
+#: objects/Menu.py:29
 msgid "Tools"
 msgstr "Herramientas"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:37
+#: objects/Menu.py:40
 msgid "Erase"
 msgstr "Borrar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:41
+#: objects/Menu.py:44
 msgid "Save"
 msgstr "Guardar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:45
+#: objects/Menu.py:48
 msgid "Load"
 msgstr "Cargar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:50
+#: objects/Menu.py:53
 msgid "History"
 msgstr "Historia"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:57
+#: objects/Menu.py:60
 msgid "Undo"
 msgstr "Deshacer"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:68
+#: objects/Menu.py:66
 msgid "Zoom"
-msgstr "Zoom"
+msgstr "Magnificar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:83
-msgid "Operations"
-msgstr "Operaciones"
+#: objects/Menu.py:81
+msgid "Start new operation"
+msgstr "Comenzar nueva operación"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:92
+#: objects/Menu.py:90
 msgid "Addition"
 msgstr "Suma"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:95
+#: objects/Menu.py:93
 msgid "Subtraction"
 msgstr "Resta"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:98
+#: objects/Menu.py:96
 msgid "Multiplication"
 msgstr "Multiplicacion"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:101
+#: objects/Menu.py:99
 msgid "Division"
 msgstr "Division"
+
+#~ msgid "Acerca de..."
+#~ msgstr "Acerca de..."
+
+#~ msgid "Rodrigo Perez Fulloni - Released under the GPL v.3.0"
+#~ msgstr "Rodrigo Perez Fulloni - Liberada bajo la GPL v.3.0"
+
+#~ msgid ""
+#~ "Departamento de Inenieria - Fundacion Teleton\n"
+#~ "Montevideo Uruguay"
+#~ msgstr ""
+#~ "Departamento de Inenieria - Fundacion Teleton\n"
+#~ "Montevideo Uruguay"
+
+#~ msgid "Operations"
+#~ msgstr "Operaciones"

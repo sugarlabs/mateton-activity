@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"PO-Revision-Date: 2011-10-28 12:05+0200\n"
+"Last-Translator: whe <heppew@yahoo.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: activity/activity.info:2
+msgid "Mateton"
+msgstr "Mateton"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+msgid "Tools"
+msgstr "Werktuigen"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+msgid "Erase"
+msgstr "Wissen"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
+msgid "Save"
+msgstr "Bewaren"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
+msgid "Load"
+msgstr "Laden"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+msgid "History"
+msgstr "Geschiedenis"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+msgid "Undo"
+msgstr "Ongedaan maken"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+msgid "Zoom"
+msgstr "Zoom"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+msgid "Start new operation"
+msgstr "Start nieuwe bewerking"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+msgid "Addition"
+msgstr "Optelling"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+msgid "Subtraction"
+msgstr "Aftrekking"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+msgid "Multiplication"
+msgstr "Vermenigvuldiging"
+
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+msgid "Division"
+msgstr "Deling"
