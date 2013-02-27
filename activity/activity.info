@@ -3,6 +3,6 @@ name = Mateton
 service_name = org.teleton.ingenieria.Mateton
 exec = sugar-activity Mateton.Mateton
 icon = activity-Mateton
-activity_version = 6
+activity_version = 7
 license = GPLv3+
 show_launcher = yes

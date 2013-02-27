@@ -1,5 +1,23 @@
 #!/usr/bin/env python
 
+#      MATETON - Un pizarron para los ninos
+#  Copyright (C) 2011 - 2013 Rodrigo Perez Fulloni
+#Departamento de Ingenieria, Fundacion Teleton
+#             Montevideo, Uruguay
+#
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import pygtk
 pygtk.require('2.0')
 import gtk
@@ -72,22 +90,22 @@ class Control:
         self.num.setListener((self.__agregarAHistCV, self.__numClic, self.__actualizarAdj))
 
         self.mngr = Manager((self.__digClic,))
-        self.menu.setGuardarListeners((self.mantener,))
-        self.menu.setAbrirListeners((self.cargar,))
+        
+        #<uncomment for PC>
+        #self.menu.setGuardarListeners((self.mantener,))
+        #self.menu.setAbrirListeners((self.cargar,))
 
         # Create a new window
+        #self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        #self.window.set_title("Mateton")
+        #self.window.connect("delete_event", self.deleteEvent)
+        #self.window.set_border_width(5)
+        #self.window.set_default_size(800, 600)
 
-        #<uncomment for PC>
-
-
-#        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
-#        self.window.set_title("Mateton")
-#        self.window.connect("delete_event", self.deleteEvent)
-#        self.window.set_border_width(5)
-#        self.window.set_default_size(800, 600)
-#
-#        self.window.add(self.todo)
-#        self.window.show()
+        #self.window.add(self.todo)
+        #self.window.show()
+        
+        #self.window.connect('key_press_event', self.onKeyPress)
 
 
 
@@ -124,8 +142,9 @@ class Control:
             self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            for e in self.cuenta.extra:
+                e.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+                e.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
         elif tipo == 2:
             self.cuenta.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
@@ -134,9 +153,10 @@ class Control:
             self.cuenta.suma.factores.setListenerFactores((self.__agregarAHistAD, self.__actualizarAdj, self.__moverZoom), (self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.suma.factores.setListenerClicMenos((self.__agregarAHistQF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
             self.cuenta.suma.factores.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom, self.__actualizarFactores))
-
-            self.cuenta.suma.resultado.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
-            self.cuenta.suma.resultado.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+            
+            for e in self.cuenta.extra:
+                e.setListenerClicMas((self.__agregarAHistAD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
+                e.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
 
         elif tipo == 3:
             self.cuenta.restos.setListenerClicMas((self.__agregarAHistAF, self.__actualizarAdj, self.__desseleccionar, self.__moverZoom))
@@ -147,18 +167,17 @@ class Control:
             self.cuenta.cociente.setListenerClicMenos((self.__agregarAHistQD, self.__actualizarAdj, self.__desseleccionar))
 
         self.pizarron.add_with_viewport(self.cuenta.agregar)
-
+        self.cuenta.setZoom(self.zoom)
 
     def __numClic(self, valor): #callback para clic en boton numero
         if self.seleccionado:
             self.seleccionado.setValor(valor)
 
     def __digClic(self, digito): #callback para clic en digitos
-        if self.seleccionado != digito:
-            if self.seleccionado != None:
-                self.seleccionado.seleccionar(False)
-            self.seleccionado = digito
-            self.seleccionado.seleccionar(True)
+        if self.seleccionado != None:
+            self.seleccionado.seleccionar(False)
+        self.seleccionado = digito
+        self.seleccionado.seleccionar(True)
 
     def __agregarAHistCV(self, valor): #callback para clic en boton numero
         if self.seleccionado and self.seleccionado.getValor() != valor:
@@ -253,7 +272,36 @@ class Control:
         """Solucion chancha. Solo para multiplicaciones. Agrega el nuevo factor de la
             suma a la lista de factores"""
         self.cuenta.factores.factores.append(self.cuenta.suma.factores.factores[len(self.cuenta.suma.factores.factores)-1])
-
+        
+    def onKeyPress(self, widget, event):
+        if self.seleccionado != None:
+            keyname = gtk.gdk.keyval_name(event.keyval)
+            value = -1
+            if keyname == "0" or keyname == "KP_0":
+                value = 0
+            elif  keyname == "1" or keyname == "KP_1":
+                value = 1
+            elif  keyname == "2" or keyname == "KP_2":
+                value = 2
+            elif  keyname == "3" or keyname == "KP_3":
+                value = 3
+            elif  keyname == "4" or keyname == "KP_4":
+                value = 4
+            elif  keyname == "5" or keyname == "KP_5":
+                value = 5
+            elif  keyname == "6" or keyname == "KP_6":
+                value = 6
+            elif  keyname == "7" or keyname == "KP_7":
+                value = 7
+            elif  keyname == "8" or keyname == "KP_8":
+                value = 8
+            elif  keyname == "9" or keyname == "KP_9":
+                value = 9
+            elif keyname == "period" or keyname == "KP_Decimal":
+                value =","
+            if value!= -1: 
+                self.num.simularClic(value)
+            
 def main():
     gtk.main()
 

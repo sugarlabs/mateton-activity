@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 07:24-0400\n"
+"POT-Creation-Date: 2011-07-13 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,51 +21,51 @@ msgstr ""
 msgid "Mateton"
 msgstr ""
 
-#: objects/Menu.py:29
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
 #, fuzzy
 msgid "Tools"
 msgstr "ឧបករណ៍"
 
-#: objects/Menu.py:40
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
 msgid "Erase"
 msgstr "លុប"
 
-#: objects/Menu.py:44
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
 msgid "Save"
 msgstr "រក្សា​​ទុក"
 
-#: objects/Menu.py:48
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
 msgid "Load"
 msgstr "ផ្ទុក"
 
-#: objects/Menu.py:53
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
 msgid "History"
 msgstr "ប្រវត្តិ"
 
-#: objects/Menu.py:60
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
 msgid "Undo"
 msgstr "មិនធ្វើ​វិញ"
 
-#: objects/Menu.py:66
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
 msgid "Zoom"
 msgstr "ពង្រីក"
 
-#: objects/Menu.py:81
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
 msgid "Start new operation"
 msgstr ""
 
-#: objects/Menu.py:90
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
 msgid "Addition"
 msgstr "វិធី​បូក"
 
-#: objects/Menu.py:93
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
 msgid "Subtraction"
 msgstr "វិធី​ដក"
 
-#: objects/Menu.py:96
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
 msgid "Multiplication"
 msgstr "វិធី​គុណ"
 
-#: objects/Menu.py:99
+#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
 msgid "Division"
 msgstr "ការ​បែងចែក"

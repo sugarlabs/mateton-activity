@@ -1,5 +1,5 @@
 #      MATETON - Un pizarron para los ninos
-#  Copyright (C) 2011 - Rodrigo Perez Fulloni
+#  Copyright (C) 2011 - 2013 Rodrigo Perez Fulloni
 #Departamento de Ingenieria, Fundacion Teleton
 #             Montevideo, Uruguay
 #
@@ -20,6 +20,7 @@
 from Control import Control
 from sugar.activity import activity
 import simplejson
+import sugar
 
 import pygtk
 pygtk.require('2.0')
@@ -31,21 +32,48 @@ __author__ = "rodripf"
 __date__ = "$12/05/2011 08:21:57 AM$"
 
 class Mateton(activity.Activity):
+    _NEW_TOOLBAR_SUPPORT = True
+    try:
+        from sugar.graphics.toolbarbox import ToolbarBox
+        from sugar.graphics.toolbarbox import ToolbarButton
+        from sugar.activity.widgets import StopButton
+        from sugar.activity.widgets import ActivityToolbar
+    except:
+        _NEW_TOOLBAR_SUPPORT = False
+
+
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
-        toolbox = activity.ActivityToolbox(self)
+        
+        if self._NEW_TOOLBAR_SUPPORT: #toolbar nuevo
+            #self.toolbar_box = sugar.graphics.toolbarbox.ToolbarBox()
+            self.toolbar_box = sugar.activity.widgets.ActivityToolbar(self)
+            self.toolbar_box.keep.hide()
+            
+            #stop_button = sugar.activity.widgets.StopButton(self)
+            #stop_button.props.accelerator = '<Ctrl><Shift>Q'
+            #self.toolbar_box.toolbar.insert(stop_button, -1)
+            #stop_button.show()
+            
+            self.set_toolbar_box(self.toolbar_box)
+            self.toolbar_box.show()
+           
+        else: #old toolbar
+            toolbox = activity.ActivityToolbox(self)
 
-        activity_toolbar = toolbox.get_activity_toolbar()
-        activity_toolbar.share.props.visible = False #Todavia no hay share
-        activity_toolbar.show()
+            activity_toolbar = toolbox.get_activity_toolbar()
+            activity_toolbar.share.props.visible = False #Todavia no hay share
+            activity_toolbar.show()
 
-        self.set_toolbox(toolbox)
-        toolbox.show()
+            self.set_toolbox(toolbox)
+            toolbox.show()
 
         self.activity = Control()
 
         self.set_canvas(self.activity.todo)
         self.nomArch =""
+        
+        self.connect('key_press_event', self.activity.onKeyPress)
 
 
     def read_file(self, file_path):
@@ -58,7 +86,6 @@ class Mateton(activity.Activity):
         fd.close()
         self.nomArch = data['name']
         self.activity.cargar(nombre = self.nomArch)
-        print "cargo"
 
     def write_file(self, file_path):
         if not self.metadata['mime_type']:
@@ -66,7 +93,7 @@ class Mateton(activity.Activity):
 
         data = {}
         if self.nomArch =="":
-            data['name'] = strftime("%d-%b-%Y-%H:%M:%S", gmtime())
+            data['name'] = strftime("%d%b%Y%H%M%S", gmtime())
         else:
             data['name'] = self.nomArch
 
@@ -76,4 +103,4 @@ class Mateton(activity.Activity):
         fd.close()
 
         self.activity.mantener(nombre = data['name'])
-        print "salvo"
+
