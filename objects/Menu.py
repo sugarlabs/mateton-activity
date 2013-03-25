@@ -33,7 +33,7 @@ class Menu:
 #<uncomment for PC>
 
 #        #Guardar y cargar
-        #herr = gtk.Frame(_("Herramientas"))
+        #herr = gtk.Frame(_("Tools"))
         #herr.show()
         #cont1 = gtk.VBox(False, 5)
         #cont1.show()
