@@ -18,12 +18,13 @@ __date__ ="$20/05/2011 12:12:20 PM$"
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+from sugar.activity import activity
 import pickle
 from Suma import Suma
 from Resta import Resta
 from Multiplicacion import Multiplicacion
 from Division import Division
+import os
 
 class Manager:
     def __init__(self, funcDigit):
@@ -36,21 +37,33 @@ class Manager:
         self.operacion = oper
 
     def guardar(self):
-        file1 = open("./data/saves/" + self.archivo + ".hst", "wb")
+        actRoot = activity.get_activity_root()
+        saveFolder = actRoot + "/data/saves/"
+        
+        if not os.path.exists(saveFolder):
+            os.makedirs(saveFolder)
+        
+        saveFile = saveFolder + self.archivo        
+
+        file1 = open(saveFile + ".hst", "wb")
         pikH = pickle.Pickler(file1)
         pikH.dump(self.historia)
 
 
-        file2 = open("./data/saves/" + self.archivo + ".opr", "wb")
+        file2 = open(saveFile + ".opr", "wb")
         pikO = pickle.Pickler(file2)
         pikO.dump(self.operacion)
 
     def abrir(self):
-        file1 = open("./data/saves/" + self.archivo + ".hst", "rb")
+        actRoot = activity.get_activity_root()
+        saveFolder = actRoot + "/data/saves/"
+        saveFile = saveFolder + self.archivo
+
+        file1 = open(saveFile + ".hst", "rb")
         pikH = pickle.Unpickler(file1)
         historia = pikH.load()
 
-        file2 = open("./data/saves/" + self.archivo + ".opr", "rb")
+        file2 = open(saveFile + ".opr", "rb")
         pikO = pickle.Unpickler(file2)
         eo = pikO.load()
 

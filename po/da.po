@@ -6,66 +6,72 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
-"PO-Revision-Date: 2011-09-28 17:18+0200\n"
+"POT-Creation-Date: 2013-02-27 00:34-0500\n"
+"PO-Revision-Date: 2013-03-16 22:55+0200\n"
 "Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid "Mateton"
 msgstr "Mateton"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:36
+msgid "Herramientas"
+msgstr "Herramientas"
+
+#: objects/Menu.py:51
 msgid "Tools"
 msgstr "Værktøjer"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:62
 msgid "Erase"
 msgstr "Udvisk"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
+#: objects/Menu.py:68
 msgid "Save"
 msgstr "Gem"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
+#: objects/Menu.py:73
 msgid "Load"
 msgstr "Indlæs"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:79
 msgid "History"
 msgstr "Historik"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:86
 msgid "Undo"
 msgstr "Fortryd"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:92
 msgid "Zoom"
 msgstr "Zoom"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:107
 msgid "Start new operation"
 msgstr "Start ny handling"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:116
 msgid "Addition"
 msgstr "Addition"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:119
 msgid "Subtraction"
 msgstr "Subtraktion"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:122
 msgid "Multiplication"
 msgstr "Multiplikation"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:125
 msgid "Division"
 msgstr "Division"
 
