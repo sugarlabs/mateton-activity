@@ -1,7 +1,7 @@
 [Activity]
 name = Mateton
 bundle_id = org.teleton.ingenieria.Mateton
-exec = sugar-activity Mateton.Mateton
+exec = sugar-activity3 Mateton.Mateton
 icon = activity-Mateton
 activity_version = 9
 license = GPLv3+
