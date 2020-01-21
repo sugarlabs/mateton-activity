@@ -28,7 +28,6 @@ class Historia:
 
         dummy = Suceso(-1)
         self.suc.append(dummy)
-        print(self.suc)
 
     def agregar(self, suceso):
         if self.actual < len(self.suc) - 1:

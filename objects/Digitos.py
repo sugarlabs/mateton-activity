@@ -51,7 +51,6 @@ class Digitos:
             self.digitos.append(este)
             
             if self.inverso:
-                print(self.inverso)
                 self.agregar.pack_start(este.agregar, False, False, 10)
             else:
                 self.agregar.pack_end(este.agregar, False, False, 10)
