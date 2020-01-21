@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-27 00:34-0500\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2013-03-11 08:51+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,57 +23,54 @@ msgstr ""
 msgid "Mateton"
 msgstr "Mathéthon"
 
-#: objects/Menu.py:36
-msgid "Herramientas"
-msgstr "Outils"
-
-#: objects/Menu.py:51
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "Outils"
 
-#: objects/Menu.py:62
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "Effacer"
 
-#: objects/Menu.py:68
-msgid "Save"
-msgstr "Enregistrer"
-
-#: objects/Menu.py:73
-msgid "Load"
-msgstr "Charger"
-
-#: objects/Menu.py:79
+#: objects/Menu.py:80
 msgid "History"
 msgstr "Historique"
 
-#: objects/Menu.py:86
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "Défaire"
 
-#: objects/Menu.py:92
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "Zoom"
 
-#: objects/Menu.py:107
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr "Commencer une nouvelle opération"
 
-#: objects/Menu.py:116
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "Addition"
 
-#: objects/Menu.py:119
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "Soustraction"
 
-#: objects/Menu.py:122
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "Multiplication"
 
-#: objects/Menu.py:125
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "Division"
+
+#~ msgid "Herramientas"
+#~ msgstr "Outils"
+
+#~ msgid "Save"
+#~ msgstr "Enregistrer"
+
+#~ msgid "Load"
+#~ msgstr "Charger"
 
 #~ msgid "Acerca de..."
 #~ msgstr "À propos de..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2011-09-28 09:52+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,57 +18,57 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 # proviene de Matemáticas y Teletón = MateTón
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid "Mateton"
 msgstr "Mateton"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "Herramientas"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "Borrar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
-msgid "Save"
-msgstr "Guardar"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
-msgid "Load"
-msgstr "Cargar"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:80
 msgid "History"
 msgstr "Historia"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "Deshacer"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "Magnificar"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr "Comenzar nueva operación"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "Suma"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "Resta"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "Multiplicacion"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "Division"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"
+
+#~ msgid "Load"
+#~ msgstr "Cargar"
 
 #~ msgid "Acerca de..."
 #~ msgstr "Acerca de..."

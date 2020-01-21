@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2011-10-31 18:23+0200\n"
 "Last-Translator: Yuan <yuanchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,54 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid "Mateton"
 msgstr "數字板"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "工具"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "清除"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
-msgid "Save"
-msgstr "存檔"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
-msgid "Load"
-msgstr "讀取"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:80
 msgid "History"
 msgstr "歷程"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "復原"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "顯示比例"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr "重新開始"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "加法"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "減法"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "乘法"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "除法"
+
+#~ msgid "Save"
+#~ msgstr "存檔"
+
+#~ msgid "Load"
+#~ msgstr "讀取"

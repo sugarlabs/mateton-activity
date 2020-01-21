@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2011-12-06 12:10+0200\n"
 "Last-Translator: FRKS <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,54 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid "Mateton"
 msgstr "Mateton"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "Narzędzia"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "Usuń"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
-msgid "Save"
-msgstr "Zapisz"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
-msgid "Load"
-msgstr "Wgraj"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:80
 msgid "History"
 msgstr "Historia"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "Cofnij"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "Powiększ"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr "Rozpocznij nowe działanie"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "Dodawanie"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "Odejmowanie"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "Mnożenie"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "Dzielenie"
+
+#~ msgid "Save"
+#~ msgstr "Zapisz"
+
+#~ msgid "Load"
+#~ msgstr "Wgraj"

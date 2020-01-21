@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2011-07-15 08:31+0200\n"
 "Last-Translator: <aman.maharjan@olenepal.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,58 +17,58 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 #, fuzzy
 msgid "Mateton"
 msgstr "Mateton\r"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "औजारहरु"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "मेट"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
-msgid "Save"
-msgstr "सेभ गर"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
-msgid "Load"
-msgstr "लोड गर"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:80
 msgid "History"
 msgstr "इतिहास"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "पूर्वस्थितिमा फर्काऊ"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "ठूलो पार"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr ""
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "थप"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "घटाऊ"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "गुणन"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "भाग"
+
+#~ msgid "Save"
+#~ msgstr "सेभ गर"
+
+#~ msgid "Load"
+#~ msgstr "लोड गर"
 
 # About;;;   मेरो
 #~ msgid "Acerca de..."

@@ -2,84 +2,65 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-24 00:33-0400\n"
-"PO-Revision-Date: 2011-08-29 07:09+0200\n"
-"Last-Translator: <saulleoart@gmail.com>\n"
+"PO-Revision-Date: 2017-02-08 01:03+0000\n"
+"Last-Translator: MartínOesterreich <martin.otte80@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: gug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1486515830.000000\n"
 
 #. TRANS: "name" option from activity.info file
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
-#, fuzzy
 msgid "Mateton"
-msgstr "Mateton"
+msgstr "Mateton."
 
 #: objects/Menu.py:52
 msgid "Tools"
-msgstr "Eyextalábchik"
+msgstr "Tembipuru."
 
 #: objects/Menu.py:63
 msgid "Erase"
-msgstr "Pakuw"
+msgstr "Mbogueha."
 
 #: objects/Menu.py:80
 msgid "History"
-msgstr "Wat'elom t'ilab"
+msgstr "Tembiasakue."
 
 #: objects/Menu.py:87
 msgid "Undo"
-msgstr "Ka tixk'a'"
+msgstr "Mosarambi."
 
 #: objects/Menu.py:93
 msgid "Zoom"
-msgstr "Puwedha'"
+msgstr "Mbotuicha."
 
 #: objects/Menu.py:108
 msgid "Start new operation"
-msgstr ""
+msgstr "Ñepyrũ pyahu apo."
 
 #: objects/Menu.py:117
 msgid "Addition"
-msgstr "Punk'udh ajimtaláb"
+msgstr "Mboheta"
 
 #: objects/Menu.py:120
 msgid "Subtraction"
-msgstr "Tixk'adh ajimtaláb"
+msgstr "Tembyre."
 
 #: objects/Menu.py:123
 msgid "Multiplication"
-msgstr "Dho'edhom ajimtaláb"
+msgstr "Ñemboheta."
 
 #: objects/Menu.py:126
 msgid "Division"
-msgstr "Buk'nadh ajimtaláb"
-
-#~ msgid "Save"
-#~ msgstr "Dhaya'"
-
-#~ msgid "Load"
-#~ msgstr "Ka k'adhba'"
-
-#~ msgid "Acerca de..."
-#~ msgstr "Etílakej.."
-
-#~ msgid "Rodrigo Perez Fulloni - Released under the GPL v.3.0"
-#~ msgstr "Rodrigo perez Fulloni - tejwamédhach k'al an jolataláb GPL v.3.0"
-
-#~ msgid ""
-#~ "Departamento de Inenieria - Fundacion Teleton\n"
-#~ "Montevideo Uruguay"
-#~ msgstr "atáj jolataláb ti inenieria- tin tujtal an teleton/nmontevideo uruguay"
-
-#~ msgid "Operations"
-#~ msgstr "Tájnél k'al an ajixtaláb"
+msgstr "Ñembovo."

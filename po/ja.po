@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-13 12:41+0000\n"
+"POT-Creation-Date: 2013-03-24 00:33-0400\n"
 "PO-Revision-Date: 2011-12-05 03:45+0200\n"
 "Last-Translator: shirayuki <shirayuking@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,54 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
 msgid "Mateton"
 msgstr "Mateton"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:29
+#: objects/Menu.py:52
 msgid "Tools"
 msgstr "ツール"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:40
+#: objects/Menu.py:63
 msgid "Erase"
 msgstr "消去"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:44
-msgid "Save"
-msgstr "保存"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:48
-msgid "Load"
-msgstr "読み込み"
-
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:53
+#: objects/Menu.py:80
 msgid "History"
 msgstr "履歴"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:60
+#: objects/Menu.py:87
 msgid "Undo"
 msgstr "取り消し"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:66
+#: objects/Menu.py:93
 msgid "Zoom"
 msgstr "ズーム"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:81
+#: objects/Menu.py:108
 msgid "Start new operation"
 msgstr "新しい操作を開始"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:90
+#: objects/Menu.py:117
 msgid "Addition"
 msgstr "足し算"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:93
+#: objects/Menu.py:120
 msgid "Subtraction"
 msgstr "引き算"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:96
+#: objects/Menu.py:123
 msgid "Multiplication"
 msgstr "かけ算"
 
-#: /home/rodripf/Programacion/Mateton2/src/objects/Menu.py:99
+#: objects/Menu.py:126
 msgid "Division"
 msgstr "割り算"
+
+#~ msgid "Save"
+#~ msgstr "保存"
+
+#~ msgid "Load"
+#~ msgstr "読み込み"
