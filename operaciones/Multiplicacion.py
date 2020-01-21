@@ -19,9 +19,9 @@ __date__ ="$27/05/2011 11:33:41 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from Operacion import Operacion
 from Factores import Factores
@@ -30,31 +30,31 @@ from Suma import Suma
 
 class Multiplicacion(Operacion):
     def __init__(self, functions, digitos = 2):
-        self.agregar = gtk.HBox()
+        self.agregar = Gtk.HBox()
         self.agregar.show()
 
-        self.principal = gtk.VBox()
+        self.principal = Gtk.VBox()
         self.principal.show()
-        self.agregar.pack_end(self.principal)
+        self.agregar.pack_end(self.principal, True, True, 0)
 
         self.factores = Factores(2, digitos, functions, False)
-        self.principal.pack_start(self.factores.agregar, False, False)
+        self.principal.pack_start(self.factores.agregar, False, False, 0)
 
-        self.igual = gtk.HBox()
+        self.igual = Gtk.HBox()
         self.igual.show()
         self.linea = self.getLineaHor(500)
-        self.igual.pack_end(self.linea, False, False)
+        self.igual.pack_end(self.linea, False, False, 0)
 
-        self.signo = gtk.Image()
+        self.signo = Gtk.Image()
         self.signo.set_from_file("./images/x.gif")
         self.signo.show()
-        self.igual.pack_start(self.signo)
+        self.igual.pack_start(self.signo, True, True, 0)
 
-        self.principal.pack_start(self.igual, False, False)
+        self.principal.pack_start(self.igual, False, False, 0)
 
         
         self.suma = Suma(functions, digitos, digitos, 2)
-        self.principal.pack_start(self.suma.agregar, False, False)
+        self.principal.pack_start(self.suma.agregar, False, False, 0)
 
         self.factores.factores.extend(self.suma.factores.factores)
 

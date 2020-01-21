@@ -19,9 +19,9 @@ __date__ ="$06/05/2011 12:08:22 PM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from Factor import Factor
 
@@ -29,14 +29,14 @@ class Factores():
     def __init__(self, factores, digitos, functions, botonMas = False, unoMenos = False, correrIDs = 0, inverso=False):
         self.defaultListeners = functions
         self.factores = []
-        self.agregar = gtk.HBox()
+        self.agregar = Gtk.HBox()
         self.agregar.show()
         self.inverso = inverso
 
 
-        self.principal = gtk.VBox(False, 10)
+        self.principal = Gtk.VBox(False, 10)
         self.principal.show()
-        self.agregar.pack_end(self.principal)
+        self.agregar.pack_end(self.principal, True, True, 0)
 
         self.correrIDs = correrIDs
         self.digitos = digitos
@@ -46,24 +46,24 @@ class Factores():
 
         self.hided = 0
 
-        for i in xrange(factores):
+        for i in range(factores):
             self.agregarUno(self.defaultListeners)
 
         if botonMas:
-            botones = gtk.VBox()
+            botones = Gtk.VBox()
             botones.show()
 
-            self.botonMenos = gtk.Button("/\\")
+            self.botonMenos = Gtk.Button("/\\")
             self.botonMenos.show()
             self.botonMenos.connect("clicked", self.clicMenos)
-            botones.pack_start(self.botonMenos)
+            botones.pack_start(self.botonMenos, True, True, 0)
             
-            self.botonMas = gtk.Button("\\/")
+            self.botonMas = Gtk.Button("\\/")
             self.botonMas.show()
             self.botonMas.connect("clicked", self.clicMas)
-            botones.pack_start(self.botonMas)
+            botones.pack_start(self.botonMas, True, True, 0)
 
-            self.agregar.pack_start(botones, False, False)
+            self.agregar.pack_start(botones, False, False, 0)
 
         
 
@@ -82,7 +82,7 @@ class Factores():
                 este.MenosListeners = self.factores[0].MenosListeners
             self.count += 1
             self.factores.append(este)
-            self.principal.pack_start(este.agregar, False, False)
+            self.principal.pack_start(este.agregar, False, False, 0)
         else:
             self.factores[self.count - self.hided - self.correrIDs].agregar.show()
             self.hided -= 1

@@ -28,12 +28,12 @@ class EstadoOperacion:
         self.cantDigitos = []
         self.valores = []
 
-        for i in xrange(self.cantFactores):
+        for i in range(self.cantFactores):
             cantD = operacion.factores.factores[i].digitos.count
             self.cantDigitos.append(cantD)
 
             v = []
-            for j in xrange(cantD):
+            for j in range(cantD):
                 valor = operacion.factores.factores[i].digitos.digitos[j].getValor()
                 v.append(valor)
 

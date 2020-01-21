@@ -19,9 +19,9 @@ __date__ ="$16/05/2011 08:52:03 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from Operacion import Operacion
 from Factores import Factores
@@ -30,33 +30,33 @@ from Factor import Factor
 
 class Suma(Operacion):
     def __init__(self, functions, factores = 3, digitos = 3, correrIDs = 0):
-        self.agregar = gtk.HBox()
+        self.agregar = Gtk.HBox()
         self.agregar.show()
 
-        self.principal = gtk.VBox(False, 0)
+        self.principal = Gtk.VBox(False, 0)
         self.principal.show()
-        self.agregar.pack_end(self.principal)
+        self.agregar.pack_end(self.principal, True, True, 0)
         
         self.llevo = Factor(digitos, functions, -2)
-        self.principal.pack_start(self.llevo.agregar, False, False)
+        self.principal.pack_start(self.llevo.agregar, False, False, 0)
 
         self.factores = Factores(factores, digitos, functions, True, correrIDs = correrIDs)
-        self.principal.pack_start(self.factores.agregar, False, False)
+        self.principal.pack_start(self.factores.agregar, False, False, 0)
 
-        self.igual = gtk.HBox()
+        self.igual = Gtk.HBox()
         self.igual.show()
         self.linea = self.getLineaHor(500)
-        self.igual.pack_end(self.linea, False, False)        
+        self.igual.pack_end(self.linea, False, False, 0)
 
-        self.signo = gtk.Image()
+        self.signo = Gtk.Image()
         self.signo.set_from_file("./images/+.gif")
         self.signo.show()
-        self.igual.pack_start(self.signo)
+        self.igual.pack_start(self.signo, True, True, 0)
 
         self.principal.pack_start(self.igual, False, True, 10)
 
         self.resultado = Factor(digitos+1, functions, -1)
-        self.principal.pack_start(self.resultado.agregar, False, False)
+        self.principal.pack_start(self.resultado.agregar, False, False, 0)
 
         self.tipo = 0
         

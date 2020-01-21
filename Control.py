@@ -18,9 +18,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk
 import sys
 
 sys.path.append('./objects')
@@ -41,7 +41,7 @@ from EstadoOperacion import EstadoOperacion
 
 class Control:
     def deleteEvent(self, widget, event, data=None):
-        gtk.main_quit()
+        Gtk.main_quit()
         return False
 
     def __init__(self):
@@ -53,17 +53,17 @@ class Control:
         self.zoom = 2
         
         #Contiene todo
-        self.todo = gtk.HBox(False, 0)
+        self.todo = Gtk.HBox(False, 0)
         self.todo.show()
         
 
         #Contiene los menus
-        self.menus = gtk.VBox(False, 0)
+        self.menus = Gtk.VBox(False, 0)
         self.menus.show()
-        self.todo.pack_start(self.menus, False, False)
+        self.todo.pack_start(self.menus, False, False, 0)
 
         #Contiene el pizarron
-        self.pizarron = gtk.ScrolledWindow()
+        self.pizarron = Gtk.ScrolledWindow()
         self.pizarron.show()
       
         self.cargarCuenta(0)
@@ -96,7 +96,7 @@ class Control:
         #self.menu.setAbrirListeners((self.cargar,))
 
         # Create a new window
-        #self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        #self.window = Gtk.Window(Gtk.WindowType.TOPLEVEL)
         #self.window.set_title("Mateton")
         #self.window.connect("delete_event", self.deleteEvent)
         #self.window.set_border_width(5)
@@ -117,7 +117,7 @@ class Control:
             self.__desseleccionar()
         if not self.cuenta == None:
             self.todo.remove(self.pizarron)
-            self.pizarron = gtk.ScrolledWindow()
+            self.pizarron = Gtk.ScrolledWindow()
             self.pizarron.show()
             self.todo.add(self.pizarron)
             del self.cuenta
@@ -275,7 +275,7 @@ class Control:
         
     def onKeyPress(self, widget, event):
         if self.seleccionado != None:
-            keyname = gtk.gdk.keyval_name(event.keyval)
+            keyname = Gdk.keyval_name(event.keyval)
             value = -1
             if keyname == "0" or keyname == "KP_0":
                 value = 0
@@ -303,7 +303,7 @@ class Control:
                 self.num.simularClic(value)
             
 def main():
-    gtk.main()
+    Gtk.main()
 
 
 if __name__ == "__main__":

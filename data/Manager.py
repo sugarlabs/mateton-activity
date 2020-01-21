@@ -18,7 +18,7 @@ __date__ ="$20/05/2011 12:12:20 PM$"
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from sugar.activity import activity
+from sugar3.activity import activity
 import pickle
 from Suma import Suma
 from Resta import Resta
@@ -77,7 +77,7 @@ class Manager:
             operacion = Division(self.funcionesDigitos)
 
         historia.actual = 0
-        for i in xrange(len(historia.suc)):
+        for i in range(len(historia.suc)):
             historia.setPosicion(i, operacion)
 
         return (historia, operacion)

@@ -31,7 +31,7 @@ class Historia:
 
     def agregar(self, suceso):
         if self.actual < len(self.suc) - 1:
-            for i in xrange(self.actual+1, len(self.suc)): #borro todos los posteriores al actual nuevo
+            for i in range(self.actual+1, len(self.suc)): #borro todos los posteriores al actual nuevo
                 self.suc.pop()
 
         self.actual += 1

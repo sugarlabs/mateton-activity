@@ -19,9 +19,10 @@ __date__ = "$17/05/2011 09:10:57 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, GdkPixbuf
+
 
 class Operacion:
     tipo = None
@@ -63,9 +64,9 @@ class Operacion:
 
 
     def getLineaHor(self, largo):
-        im = gtk.Image()
-        pixbuf = gtk.gdk.pixbuf_new_from_file("./images/lineaHor.png")
-        scaled_buf = pixbuf.scale_simple(largo, 3, gtk.gdk.INTERP_BILINEAR)
+        im = Gtk.Image()
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file("./images/lineaHor.png")
+        scaled_buf = pixbuf.scale_simple(largo, 3, GdkPixbuf.InterpType.BILINEAR)
         im.set_from_pixbuf(scaled_buf)
         im.show()
         return im
@@ -78,9 +79,9 @@ class Operacion:
         pass
 
     def getLineaVer(self, alto):
-        im = gtk.Image()
-        pixbuf = gtk.gdk.pixbuf_new_from_file("./images/lineaVer.png")
-        scaled_buf = pixbuf.scale_simple(3, alto, gtk.gdk.INTERP_BILINEAR)
+        im = Gtk.Image()
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file("./images/lineaVer.png")
+        scaled_buf = pixbuf.scale_simple(3, alto, GdkPixbuf.InterpType.BILINEAR)
         im.set_from_pixbuf(scaled_buf)
         im.show()
         return im
