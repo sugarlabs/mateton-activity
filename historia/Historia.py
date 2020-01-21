@@ -28,11 +28,13 @@ class Historia:
 
         dummy = Suceso(-1)
         self.suc.append(dummy)
+        print(self.suc)
 
     def agregar(self, suceso):
         if self.actual < len(self.suc) - 1:
             for i in range(self.actual+1, len(self.suc)): #borro todos los posteriores al actual nuevo
-                self.suc.pop()
+                if len(self.suc) >= 1:
+                    self.suc.pop()
 
         self.actual += 1
         self.suc.append(suceso)
@@ -77,7 +79,7 @@ class Historia:
                      operacion.extra[obj].digitos.quitarUno()
 
         elif self.actual > lugar: #me muevo hacia la izquierda
-            if self.actual - lugar > 1:
+            if self.actual - lugar > 1 and (len(self.suc) >= self.actual) and (self.actual != 0):
                 self.setPosicion(lugar+1, operacion)
 
             actual = self.suc[self.actual]

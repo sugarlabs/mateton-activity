@@ -36,6 +36,7 @@ from time import gmtime, strftime
 __author__ = "rodripf"
 __date__ = "$12/05/2011 08:21:57 AM$"
 
+
 class Mateton(activity.Activity):
     _NEW_TOOLBAR_SUPPORT = True
     try:
