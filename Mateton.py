@@ -16,6 +16,11 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('Gdk', '3.0')
+from sugar3.activity.widgets import StopButton, ShareButton, DescriptionItem, TitleEntry, ActivityButton
+from sugar3.graphics.toolbarbox import ToolbarBox
 
 from Control import Control
 from sugar3.activity import activity
@@ -44,30 +49,8 @@ class Mateton(activity.Activity):
 
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
-        
-        if self._NEW_TOOLBAR_SUPPORT: #toolbar nuevo
-            #self.toolbar_box = sugar.graphics.toolbarbox.ToolbarBox()
-            self.toolbar_box = sugar3.activity.widgets.ActivityToolbar(self)
-            self.toolbar_box.hide()
-            
-            #stop_button = sugar.activity.widgets.StopButton(self)
-            #stop_button.props.accelerator = '<Ctrl><Shift>Q'
-            #self.toolbar_box.toolbar.insert(stop_button, -1)
-            #stop_button.show()
-            
-            self.set_toolbar_box(self.toolbar_box)
-            self.toolbar_box.show()
-           
-        else: #old toolbar
-            toolbox = activity.ActivityToolbox(self)
 
-            activity_toolbar = toolbox.get_activity_toolbar()
-            activity_toolbar.share.props.visible = False #Todavia no hay share
-            activity_toolbar.show()
-
-            self.set_toolbox(toolbox)
-            toolbox.show()
-
+        self.build_toolbar()
         self.activity = Control()
 
         self.set_canvas(self.activity.todo)
@@ -75,6 +58,43 @@ class Mateton(activity.Activity):
         
         self.connect('key_press_event', self.activity.onKeyPress)
 
+    def build_toolbar(self):
+
+        # we do not have collaboration features
+        # make the share option insensitive
+        self.max_participants = 1
+
+        # toolbar with the new toolbar redesign
+        toolbar_box = ToolbarBox()
+
+        activity_button = ActivityButton(self)
+        toolbar_box.toolbar.insert(activity_button, 0)
+        activity_button.show()
+
+        title_entry = TitleEntry(self)
+        toolbar_box.toolbar.insert(title_entry, -1)
+        title_entry.show()
+
+        description_item = DescriptionItem(self)
+        toolbar_box.toolbar.insert(description_item, -1)
+        description_item.show()
+
+        share_button = ShareButton(self)
+        toolbar_box.toolbar.insert(share_button, -1)
+        share_button.show()
+
+        separator = Gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(True)
+        toolbar_box.toolbar.insert(separator, -1)
+        separator.show()
+
+        stop_button = StopButton(self)
+        toolbar_box.toolbar.insert(stop_button, -1)
+        stop_button.show()
+
+        self.set_toolbar_box(toolbar_box)
+        toolbar_box.show()
 
     def read_file(self, file_path):
         if self.metadata['mime_type'] != 'text/plain':
