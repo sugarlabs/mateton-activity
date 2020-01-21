@@ -77,10 +77,10 @@ class Historia:
                 else:
                      operacion.extra[obj].digitos.quitarUno()
 
-        elif self.actual > lugar: #me muevo hacia la izquierda
-            if self.actual - lugar > 1 and (len(self.suc) >= self.actual) and (self.actual != 0):
+        elif self.actual > lugar and (len(self.suc) >= self.actual) and (self.actual != 0):
+            #me muevo hacia la izquierda
+            if self.actual - lugar > 1 :
                 self.setPosicion(lugar+1, operacion)
-
             actual = self.suc[self.actual]
             tipo = actual.getTipo()
             if  tipo == 0:
