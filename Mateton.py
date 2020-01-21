@@ -18,13 +18,13 @@
 
 
 from Control import Control
-from sugar.activity import activity
+from sugar3.activity import activity
 import simplejson
-import sugar
+import sugar3
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from time import gmtime, strftime
 
@@ -34,10 +34,10 @@ __date__ = "$12/05/2011 08:21:57 AM$"
 class Mateton(activity.Activity):
     _NEW_TOOLBAR_SUPPORT = True
     try:
-        from sugar.graphics.toolbarbox import ToolbarBox
-        from sugar.graphics.toolbarbox import ToolbarButton
-        from sugar.activity.widgets import StopButton
-        from sugar.activity.widgets import ActivityToolbar
+        from sugar3.graphics.toolbarbox import ToolbarBox
+        from sugar3.graphics.toolbarbox import ToolbarButton
+        from sugar3.activity.widgets import StopButton
+        from sugar3.activity.widgets import ActivityToolbar
     except:
         _NEW_TOOLBAR_SUPPORT = False
 
@@ -47,8 +47,8 @@ class Mateton(activity.Activity):
         
         if self._NEW_TOOLBAR_SUPPORT: #toolbar nuevo
             #self.toolbar_box = sugar.graphics.toolbarbox.ToolbarBox()
-            self.toolbar_box = sugar.activity.widgets.ActivityToolbar(self)
-            self.toolbar_box.keep.hide()
+            self.toolbar_box = sugar3.activity.widgets.ActivityToolbar(self)
+            self.toolbar_box.hide()
             
             #stop_button = sugar.activity.widgets.StopButton(self)
             #stop_button.props.accelerator = '<Ctrl><Shift>Q'

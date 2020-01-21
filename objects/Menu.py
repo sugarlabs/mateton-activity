@@ -19,27 +19,27 @@ __date__ ="$12/05/2011 09:49:53 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from gettext import gettext as _
 
 class Menu:
     def __init__(self):
-        self.agregar = gtk.VBox()
+        self.agregar = Gtk.VBox()
         self.agregar.show()
         
 #<uncomment for PC>
 
 #        #Guardar y cargar
-        #herr = gtk.Frame(_("Tools"))
+        #herr = Gtk.Frame(_("Tools"))
         #herr.show()
-        #cont1 = gtk.VBox(False, 5)
+        #cont1 = Gtk.VBox(False, 5)
         #cont1.show()
-        #h3 = gtk.VBox(False, 5)
+        #h3 = Gtk.VBox(False, 5)
         #h3.show()
-        #h4 = gtk.HBox()
+        #h4 = Gtk.HBox()
         #h4.show()
 
 #</uncomment for PC>
@@ -49,52 +49,52 @@ class Menu:
 
         #Deshacer y borrar
         
-        herr = gtk.Frame(_("Tools"))
+        herr = Gtk.Frame.new(_("Tools"))
         herr.show()
-        cont1 = gtk.VBox(False, 5)
+        cont1 = Gtk.VBox(False, 5)
         cont1.show()
-        h3 = gtk.VBox()
+        h3 = Gtk.VBox()
         h3.show()
-        h4 = gtk.HBox()
+        h4 = Gtk.HBox()
         h4.show()
 
 
         
-        self.borrar = gtk.Button(_("Erase"))
+        self.borrar = Gtk.Button(_("Erase"))
         self.borrar.connect("button_press_event", self.__clicBorrar)
         self.borrar.show()
         h3.add(self.borrar)
 
 #<uncomment for PC>
-        #self.keep = gtk.Button(_("Save"))
+        #self.keep = Gtk.Button(_("Save"))
         #self.keep.show()
         #h3.add(self.keep)
 
 
-        #self.open = gtk.Button(_("Load"))
+        #self.open = Gtk.Button(_("Load"))
         #self.open.show()
         #h3.add(self.open)
 #</uncomment for PC>
 
         
-        h = gtk.Frame(_("History"))
+        h = Gtk.Frame.new(_("History"))
         h.show()
         h3.add(h)
-        self.cont2 = gtk.VBox()
+        self.cont2 = Gtk.VBox()
         self.cont2.show()
         h.add(self.cont2)
 
-        self.undo = gtk.Button(_("Undo"))
+        self.undo = Gtk.Button(_("Undo"))
         self.undo.show()
         self.cont2.add(self.undo)
 
         self.cargarAdj(0, 0, 0, 1, 1)
 
-        z = gtk.Frame(_("Zoom"))
+        z = Gtk.Frame.new(_("Zoom"))
         z.show()
         h3.add(z)
-        self.adj2 = gtk.Adjustment(2, 1, 4, 1, 1)
-        self.zoom = gtk.HScale(self.adj2)
+        self.adj2 = Gtk.Adjustment(2, 1, 4, 1, 1)
+        self.zoom = Gtk.HScale.new(self.adj2)
         self.zoom.set_digits(0)
         self.zoom.show()
         z.add(self.zoom)
@@ -105,25 +105,25 @@ class Menu:
         
 
         #Operaciones
-        oper = gtk.Frame(_("Start new operation"))
+        oper = Gtk.Frame.new(_("Start new operation"))
         oper.show()
-        cont = gtk.VBox(False, 5)
+        cont = Gtk.VBox(False, 5)
         cont.show()
-        h1 = gtk.HBox()
+        h1 = Gtk.HBox()
         h1.show()
-        h2 = gtk.HBox()
+        h2 = Gtk.HBox()
         h2.show()
 
-        self.suma = gtk.Button(_("Addition"))
+        self.suma = Gtk.Button(_("Addition"))
         self.suma.show()
         h1.add(self.suma)
-        self.resta = gtk.Button(_("Subtraction"))
+        self.resta = Gtk.Button(_("Subtraction"))
         self.resta.show()
         h1.add(self.resta)
-        self.mult = gtk.Button(_("Multiplication"))
+        self.mult = Gtk.Button(_("Multiplication"))
         self.mult.show()
         h2.add(self.mult)
-        self.div = gtk.Button(_("Division"))
+        self.div = Gtk.Button(_("Division"))
         self.div.show()
         h2.add(self.div)
 
@@ -179,15 +179,15 @@ class Menu:
 
 
     def cargarAdj(self, value=0, lower=0, upper=0, step_incr=0, page_incr=0, page_size=0):
-        #gtk.Adjustment(value=0, lower=0, upper=0, step_incr=0, page_incr=0, page_size=0)
+        #Gtk.Adjustment(value=0, lower=0, upper=0, step_incr=0, page_incr=0, page_size=0)
         if self.adj!=None:
             del self.adj
         if self.history !=None:
             self.cont2.remove(self.history)
             del self.history
 
-        self.adj =  gtk.Adjustment(value, lower, upper, step_incr, page_incr, page_size)
-        self.history = gtk.HScale(self.adj)
+        self.adj =  Gtk.Adjustment(value, lower, upper, step_incr, page_incr, page_size)
+        self.history = Gtk.HScale.new(self.adj)
         self.history.set_digits(0)
         self.history.show()
         self.cont2.add(self.history)

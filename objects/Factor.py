@@ -19,9 +19,9 @@ __date__ ="$06/05/2011 11:33:20 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
 from Digitos import Digitos
 
@@ -33,22 +33,22 @@ class Factor:
         self.MasListeners =()
         self.MenosListeners = ()
 
-        self.botonMas = gtk.Button("<<")
+        self.botonMas = Gtk.Button("<<")
         self.botonMas.show()
         self.botonMas.connect("clicked", self.clicMas)
 
-        self.botonMenos = gtk.Button(">>")
+        self.botonMenos = Gtk.Button(">>")
         self.botonMenos.show()
         self.botonMenos.connect("clicked", self.clicMenos)
 
-        self.agregar = gtk.HBox()
+        self.agregar = Gtk.HBox()
         self.agregar.show()
 
-        self.agregar.pack_start(self.botonMas, False, False)
-        self.agregar.pack_start(self.botonMenos, False, False)
+        self.agregar.pack_start(self.botonMas, False, False, 0)
+        self.agregar.pack_start(self.botonMenos, False, False, 0)
 
         self.digitos = Digitos(cant, self.defaultListeners, self.idFactor, inverso)
-        self.agregar.pack_end(self.digitos.agregar)
+        self.agregar.pack_end(self.digitos.agregar, True, True, 0)
 
         self.setListener(functions)       
 

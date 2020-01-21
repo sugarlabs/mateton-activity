@@ -19,15 +19,15 @@ __date__ = "$06/05/2011 10:56:53 AM$"
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 from Digito import Digito
 
 class Digitos:
     def __init__(self, cant, functions, idFactor, inverso=False):
         self.digitos = []
-        self.agregar = gtk.HBox(False)
+        self.agregar = Gtk.HBox(False)
         self.agregar.show()
         self.defaultListeners = functions
         self.inverso = inverso
@@ -36,7 +36,7 @@ class Digitos:
         self.count = 0 #cuenta la cantidad de digitos que tengo
 
         self.hided = 0
-        for i in xrange(cant):
+        for i in range(cant):
             self.agregarUno(functions)     
 
 
@@ -51,7 +51,7 @@ class Digitos:
             self.digitos.append(este)
             
             if self.inverso:
-                print self.inverso
+                print(self.inverso)
                 self.agregar.pack_start(este.agregar, False, False, 10)
             else:
                 self.agregar.pack_end(este.agregar, False, False, 10)
