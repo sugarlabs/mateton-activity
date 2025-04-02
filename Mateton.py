@@ -24,7 +24,7 @@ from sugar3.graphics.toolbarbox import ToolbarBox
 
 from Control import Control
 from sugar3.activity import activity
-import simplejson
+import json
 import sugar3
 
 import gi
@@ -101,10 +101,9 @@ class Mateton(activity.Activity):
         if self.metadata['mime_type'] != 'text/plain':
             return
 
-        fd = open(file_path, 'r')
-        text = fd.read()
-        data = simplejson.loads(text)
-        fd.close()
+        with open(file_path, 'r') as fd:
+            data = json.load(fd)
+
         self.nomArch = data['name']
         self.activity.cargar(nombre = self.nomArch)
 
@@ -118,10 +117,8 @@ class Mateton(activity.Activity):
         else:
             data['name'] = self.nomArch
 
-        fd = open(file_path, 'w')
-        text = simplejson.dumps(data)
-        fd.write(text)
-        fd.close()
+        with open(file_path, 'w') as fd:
+            json.dump(data, fd)
 
         self.activity.mantener(nombre = data['name'])
 
