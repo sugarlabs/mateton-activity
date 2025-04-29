@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 01:56+0100\n"
-"PO-Revision-Date: 2025-03-15 20:42+0000\n"
+"PO-Revision-Date: 2025-04-30 02:39+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/mateton/ka/>\n"
@@ -37,7 +37,7 @@ msgstr "ისტორია"
 
 #: objects/Menu.py:87
 msgid "Undo"
-msgstr "დაბრუნება"
+msgstr "გაუქმება"
 
 #: objects/Menu.py:93
 msgid "Zoom"
