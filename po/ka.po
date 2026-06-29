@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 01:56+0100\n"
-"PO-Revision-Date: 2026-06-29 06:56+0000\n"
+"PO-Revision-Date: 2026-06-29 10:13+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/mateton/ka/>\n"
@@ -41,7 +41,7 @@ msgstr "გაუქმება"
 
 #: objects/Menu.py:93
 msgid "Zoom"
-msgstr "მასშტაბი"
+msgstr "გადიდება"
 
 #: objects/Menu.py:108
 msgid "Start new operation"
